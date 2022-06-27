@@ -1,0 +1,95 @@
+include ../components/_mixins.pug
+doctype html
+html(lang="en")
+  head
+    +headMeta('../', 'Join us | AWaDH - Indian Institute of Technology Ropar')
+  body
+
+    +nav('../')
+
+    main.join
+      section.join-hero
+        .container
+          h1 We wing your ideas.
+          p.subheadtext AWaDH came into existence with a desire to change the very way we do farming, and to bring technological advancements in the domain of agriculture and water.
+      .about-hero__bg
+        img(src="../assets/img/join/main-bg.jpg")
+
+      section.join-people
+        .container
+          h2 We are a bunch of plurals.
+        .join-people__images.d-flex
+          .join-people__images-gap
+          .join-people__images-group.d-flex
+            div
+              .d-flex
+                img(src="../assets/img/join/people-1.png", alt="", width="296px")
+                img(src="../assets/img/join/people-2.jpg", alt="", width="296px")
+              img(src="../assets/img/join/people-3.jpg", alt="", width="620px")
+            img(src="../assets/img/join/people-5.jpg", alt="", width="296px")
+          .join-people__images-gap
+          .join-people__images-group.d-flex
+            div
+              .d-flex
+                img(src="../assets/img/join/people-1.png", alt="", width="296px")
+                img(src="../assets/img/join/people-2.jpg", alt="", width="296px")
+              img(src="../assets/img/join/people-3.jpg", alt="", width="620px")
+            img(src="../assets/img/join/people-4.png", alt="", width="296px")
+          .join-people__images-gap
+          .join-people__images-group.d-flex
+            div
+              .d-flex
+                img(src="../assets/img/join/people-1.png", alt="", width="296px")
+                img(src="../assets/img/join/people-2.jpg", alt="", width="296px")
+              img(src="../assets/img/join/people-3.jpg", alt="", width="620px")
+            img(src="../assets/img/join/people-4.png", alt="", width="296px")
+
+      section.join-openings
+        .container
+          h2 Join us as.
+          .d-flex
+            -
+              var openings = [
+                {
+                  title: 'UG/PG CHANAKYA Fellows',
+                  description: 'Through this fellowship, we provide a platform for UG & PG students to work on a socially relevant problem and solve it using Cyber-Physical Systems (CPS). This is an opportunity to take part in the global ecosystem. This will create a pool of trained professionals in CPS domain to be problem-solvers or turn entrepreneurs. Duration of the fellowship is upto 10 months. UG/PG CHANAKYA Fellows will be provided a R & D fund and Common CPS Infrastructure to achieve their targets.',
+                  link: '#!',
+                },
+                {
+                  title: 'CHANAKYA Research Fellows / PhD / Postdocs',
+                  description: 'To provide a platform to fresh graduates and trained professionals to work on a real problem of industry in the domain of AgriTech. The CHANAKYA Research Fellows / PhDs / Postdocs would be expected to work on a socially relevant problem and solve it using Cyber-Physical Systems (CPS) and take part in the global ecosystem. The duration of the fellowship is 5 years. All CHANAKYA Research Fellows / PhDs / Postdocs will be provided a R & D fund and Common CPS Infrastructure to achieve their targets.',
+                  link: '#!',
+                },
+                {
+                  title: 'CHANAKYA Faculty Fellowships',
+                  description: 'The fellowship is offered at Assistant Professor, Associate Professor, and Professor levels for a term of 3 years. The tenure-track faculty is expected to engage heavily in research and teaching in CPS or related areas and should preferably; complement the ongoing work in the host institution. The eligibility criteria for tenure-track faculty positions will be similar to the one followed at IIT Ropar. Primary aim of this fellowship is to provide support for faculties heavily engaged in research and teaching in CPS or related areas and complementing the ongoing work in the Host Institution in areas of CPS Domain.',
+                  link: '#!',
+                },
+                {
+                  title: 'CHANAKYA Chair Professor',
+                  description: 'The CHANAKYA Chair Professors will be accepted on the lines of JC Bose fellowship programme of DST to honor & to provide support and gain the Knowledge and guidance in Research from their expertise in the domain of CPS. Anyone with a track record of an outstanding teacher or researcher in the rank of Associate Professor or Professor or a person with R&D experience from industry, retired professors, faculty from other countries can apply for the CHANAKYA Chair Professor.',
+                  link: '#!',
+                },
+              ];
+            each opening in openings
+              div
+                h3=opening.title
+                p.subtext=opening.description
+                .separator
+                a.link(href=opening.link) Apply now
+      br
+      //- section.container
+      //-   .separator
+
+      section.join-convert
+        .container
+          .d-flex.align-items-center
+            div
+              h3 Join us for your dream startup
+              //p.subtext Convert research solutions to scalable, affordable, and sustainable technology
+              a.link(href="../awadh-incubator/") Know more
+            img(src=`../assets/img/domains/join-us.jpg`, alt="study work table", width="401px")
+
+    +footer('../')
+
+    script(src="../assets/js/main.js")

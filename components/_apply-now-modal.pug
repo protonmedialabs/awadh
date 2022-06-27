@@ -1,0 +1,27 @@
+mixin applyNowModal(pathPrefix)
+  .apply-modal#apply-modal
+    div
+      .apply-modal__head
+        h3.center Apply
+        button.button-unstyled(type="button", onclick="toggleApplyModal(event);")
+          img(src=`${pathPrefix}assets/img/cross-outlined.svg`, alt="cross", width="32px")
+      .apply-modal__body
+        form
+          input#apply-name(type="text", name="fullname", placeholder="Name*", required)
+          input#apply-email(type="email", name="email", placeholder="Email address*", required)
+          input#apply-phone(type="text", name="phone", placeholder="Phone number*", required)
+          select#apply-for(name="applyingfor", required)
+            option(value="default", selected, disabled) Applying for*
+            option UG - CHANAKYA fellow
+            option PG - CHANAKYA fellow
+            option Startups
+            option CHANAKYA Research Fellows / Phd & Postdoc
+            option Chair Professors
+            option Faculty Fellows
+          select#apply-domains(name="domains", required)
+            option(value="default", selected, disabled) Domains*
+          input#apply-cv(type="file", name="cv", placeholder="Upload CV*", required)
+          textarea#apply-proposal(name="proposal", placeholder="Research Proposal (if any)")
+          p * Only shortlisted candidates will be informed through email.
+          .center
+            button.button(type="submit") Submit        

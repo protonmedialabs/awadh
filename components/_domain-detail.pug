@@ -1,0 +1,38 @@
+mixin domainDetail(id, pathPrefix = '../../')
+  main.domain
+
+    img.domain-main-img(src=`${pathPrefix}${domains[id].imageFull}`, alt=domains[id].title)
+
+    section.domain-hero.center
+      .container
+        h1=domains[id].title
+        p.subheadtext=domains[id].description
+        //- a.link(href="#!") Learn more
+
+    section.domain-research 
+      .container
+        h2.center Research Analysis
+        .d-flex
+          each analysis in domains[id].researchAnalysis
+            div
+              h3=analysis.title
+              p.subtext!=analysis.description
+
+    section.domain-join
+      .container
+        .domain-join__wrapper.d-flex.align-items-center.justify-content-space-between
+          div
+            img.domain-apply_img(src=`${pathPrefix}assets/img/domains/join-us.jpg`, alt="Join-us img")
+            h3 Does our work interests you?
+            p iHub – AWaDH is established by the Department of Science &amp; Technology, Government of India, at the IIT-R in the framework of NM – ICPS with time-bound predefined deliverables.
+          a.link(href=`${pathPrefix}join-us/`) Join us
+
+    .container
+      .separator
+
+    section.domain-members
+      .container
+        h2 Domain Co-ordinator
+        .d-flex
+          each member in domains[id].members
+            +member(member, '../../')

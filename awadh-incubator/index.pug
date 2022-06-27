@@ -1,0 +1,151 @@
+include ../components/_mixins.pug
+doctype html
+html(lang="en")
+  head
+    +headMeta('../', 'AWaDH Incubator | Indian Institute of Technology Ropar')
+  body
+
+    +nav('../')
+
+    main.incubator
+      section.incubator-hero
+        .container
+          .d-flex.align-items-center.justify-content-space-between
+            div
+              h1 AWaDH Incubator
+              p.subheadtext A "one-stop-shop" for entrepreneurial support.<br/>Our moto is to "aid, counsel, assist to excel, and protect”.
+              button.link.button-unstyled(type="button", onclick="toggleApplyModal(event);") Apply now
+            div
+              img(src="../assets/img/hands-tools.jpg", alt="hand tools", width="481px")
+      
+      .container
+        .separator
+
+      section.incubator-process
+        .container
+          h2 During the incubation process, we provide
+          .index-verticals__items.d-flex
+            -
+              var facilities = [
+                {
+                  image: '../assets/img/seed-funding.png',
+                  title: 'Seed funding',
+                  width: '45px',
+                },
+                {
+                  image: '../assets/img/market-analysis.png',
+                  title: 'Market analysis',
+                  width: '47px',
+                },
+                {
+                  image: '../assets/img/expert-assistance.png',
+                  title: 'Assistance from experts',
+                  width: '53px',
+                },
+                {
+                  image: '../assets/img/mentoring-sessions.png',
+                  title: 'One-on-One Mentoring sessions',
+                  width: '41px',
+                },
+                {
+                  image: '../assets/img/training-workshops.png',
+                  title: 'Specialized training workshops',
+                  width: '45px',
+                },
+                {
+                  image: '../assets/img/infrastructure-support.png',
+                  title: 'Infrastructure support',
+                  width: '48px',
+                },
+                {
+                  image: '../assets/img/periodic-assessment.png',
+                  title: 'Periodic assessment',
+                  width: '48px',
+                },
+                {
+                  image: '../assets/img/entrepreneurial-community.png',
+                  title: 'Entrepreneurial community',
+                  width: '45px',
+                },
+                {
+                  image: '../assets/img/scholarship.png',
+                  title: 'Investment and scholarship',
+                  width: '39px',
+                },
+              ];
+            each facility in facilities
+              .d-flex
+                img(src=facility.image, alt=facility.title, width=facility.width)
+                span
+                span=facility.title
+
+      section.incubator-domains
+        .container
+          h2 R &amp; D Domains
+          p.subheadtext The R &amp; D focus of the hub consists:
+          +incubatorDomains('../')
+
+      section.incubator-helps
+        .container
+          h2.center AWaDH - incubator helps in
+          .incubator-helps__nav
+            button.button-unstyled.incubator-helps__nav-left(type="button", onclick="incubatorNavClickHandler(event, 'back');")
+              img(src="../assets/img/chevron-right.svg", alt="chevron right")
+            button.button-unstyled.incubator-helps__nav-right(type="button", onclick="incubatorNavClickHandler(event, 'next');")
+              img(src="../assets/img/chevron-right.svg", alt="chevron right")
+          .d-flex.incubator-helps__items
+            -
+              var items = [
+                {
+                  image: '../assets/img/incubators/benefits/plan.svg',
+                  width: '89px',
+                  text: 'Turn your great idea into a great business plan',
+                },
+                {
+                  image: '../assets/img/incubators/benefits/reality.svg',
+                  width: '87px',
+                  text: 'Turn your business plan into a reality',
+                },
+                {
+                  image: '../assets/img/incubators/benefits/operations.svg',
+                  width: '84px',
+                  text: 'Master day-to-day operations and prepare for success',
+                },
+                {
+                  image: '../assets/img/incubators/benefits/funding.svg',
+                  width: '119px',
+                  text: 'Find new funding, locations, & customers',
+                },
+                {
+                  image: '../assets/img/incubators/benefits/infra.svg',
+                  width: '89px',
+                  text: 'Infrastructure support',
+                },
+              ];
+            each item in items
+              .center.incubator-helps__item
+                img(src=item.image, alt=item.text, width=item.width)
+                .separator
+                p=item.text
+          .incubator-helps__dots.center
+            span.is-active
+
+      section.domain-join
+        .container
+          .domain-join__wrapper.d-flex.align-items-center.justify-content-space-between
+            div
+              img.domain-apply_img(src="../assets/img/domains/join-us.jpg", alt="Join-us img")
+              h3 AWaDH Incubation
+              p iHub – AWaDH is established by the Department of Science &amp; Technology, Government of India, at the IIT-R in the framework of NM – ICPS with time-bound predefined deliverables.
+            button.button-unstyled.link(type="button", onclick="toggleApplyModal(event);") Apply now
+
+    +footer('../')
+
+    script.
+      var incubatorItems = document.getElementsByClassName('incubator-helps__items');
+      var incubatorItemsDots = document.getElementsByClassName('incubator-helps__dots')[0];
+      if (window.innerWidth > 979)
+        var incubatorCarouselLength = Math.ceil(incubatorItems[0].children.length / 4);
+      else
+        var incubatorCarouselLength = Math.ceil(incubatorItems[0].children.length / 2);
+    script(src="../assets/js/main.js")

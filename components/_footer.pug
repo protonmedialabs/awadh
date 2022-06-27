@@ -1,0 +1,54 @@
+mixin footer(pathPrefix = '')
+  footer.footer
+    .container 
+      .footer-widgets.d-flex
+        div
+          div
+            img(src=`${pathPrefix}assets/img/logo-wheat-nobg.png`, alt="", width="80px")
+            img(src=`${pathPrefix}assets/img/iit-ropar.png`, alt="", width="47px")
+          p iHub - AWaDH is an initiative of the Department of Science &amp; Technology, Government of India, in the framework of National Mission on Interdisciplinary Cyber - Physical Systems at the Indian Institute of Technology Ropar.
+        div
+          h4 Website
+          ul
+            li
+              a(href=pathPrefix) Home
+            li
+              a(href=`${pathPrefix}about-us/`) About us
+            li
+              a(href=`${pathPrefix}awadh-incubator/`) Incubator
+            li
+              a(href=`${pathPrefix}outreach/`) CPS Outreach
+            li
+              a(href=`${pathPrefix}join-us/`) Join us
+            //- li
+            //-   a(href=`${pathPrefix}r&d-domains/aais/`) R&amp;D domains
+            li
+              a(href=`${pathPrefix}publications/`) In news
+            li
+              a(href=`${pathPrefix}contact-us/`) Contact us
+            li
+              a(href=` https://nmicps.in/`) NM-ICPS
+        div
+          h4 Contact us
+          div
+            img(src=`${pathPrefix}assets/img/email-footer.svg`, alt="email", width="24px")
+            a(href="mailto:contact.awadh@iitrpr.ac.in") contact.awadh@iitrpr.ac.in
+          div
+            img(src=`${pathPrefix}assets/img/phone.svg`, alt="phone", width="22px")
+            a(href="tel:01881232601") 01881 - 232601
+          div
+            img(src=`${pathPrefix}assets/img/location.svg`, alt="location", width="24px")
+            span 214 / M. Visvesvaraya Block,
+              br
+              | Indian Institute of Technology Ropar, 
+              br
+              | Rupnagar - 140001, 
+              br
+              | Punjab
+      .footer-copyright.d-flex.align-items-center.justify-content-space-between
+        +socialLinks(pathPrefix)
+        span &copy; 2021-AWaDH@IIT Ropar. All rights reserved.
+        a(href="#!") Visit IIT Ropar official website
+          img(src=`${pathPrefix}assets/img/foreign.svg`, alt="foreign", width="12px", style="margin-left: 8px")
+
+  +applyNowModal(pathPrefix)

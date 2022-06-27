@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "pg-cli": "^2.0.1",
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}

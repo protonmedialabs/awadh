@@ -1,0 +1,18 @@
+mixin member(member, pathPrefix = '')
+  .about-board-member.center
+    img.about-team-img(src=member.avatar, alt=member.name)
+    h4=member.name
+    p!=member.position
+    ul
+      if member.links.linkedin
+        li
+          a(href=member.links.linkedin, target="_blank")
+            img(src=`${pathPrefix}assets/img/linkedin.svg`, alt="linkedin", width="28px")
+      if member.links.website
+        li
+          a(href=member.links.website, target="_blank")
+            img(src=`${pathPrefix}assets/img/web.svg`, alt="website", width="28px")
+      if member.links.email
+        li
+          a(href=member.links.email, target="_blank")
+            img(src=`${pathPrefix}assets/img/email.svg`, alt="email", width="32px")

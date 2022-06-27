@@ -1,0 +1,58 @@
+include ../components/_mixins.pug
+doctype html
+html(lang="en")
+  head
+    +headMeta('../', 'Contact Us | AWaDH - Indian Institute of Technology Ropar')
+  body
+
+    +nav('../')
+
+    main.contact
+      section.contact-hero.center
+        .container
+          h1 Contact us
+          p.subheadtext Reach out for any queries.
+
+      section.contact-options.center
+        .container
+          .d-flex
+            .flex-1
+              img(src="../assets/img/email-footer.svg", alt="email")
+              p.subhead
+                strong
+                  a(href="contact.awadh@iitrpr.ac.in") contact.awadh@iitrpr.ac.in
+              p we&apos;ll get back to you
+                br
+                | in 12 to 16 hrs
+            .flex-1
+              img(src="../assets/img/phone.svg", alt="phone")
+              p.subhead
+                strong
+                  a(href="tel:01881232601") 01881 - 232601
+              p Available from 9am to 5.30pm
+            .flex-1
+              img(src="../assets/img/location.svg", alt="location")
+              p.subhead
+                strong Indian Institute of Technology Ropar
+              p 214 / M. Visvesvaraya Block,
+                br
+                | Indian Institute of Technology Ropar, 
+                br
+                | Rupnagar - 140001, Punjab.
+
+      section.contact-form
+        .container
+          h2.center Send us a message
+          p.center.subheadtext If you have any question, feel free to write us.
+          form
+            input#contact-name(type="text", name="fullname", placeholder="Name*", required)
+            input#contact-email(type="email", name="email", placeholder="Email address*", required)
+            //- select#contact-reason(name="reason", required)
+            //-   option(value="default", disabled, selected) Select a reason*
+            textarea#contact-message(name="message", placeholder="Your message*", required)
+            .center
+              button.button(type="submit") Submit
+
+    +footer('../')
+
+    script(src="../assets/js/main.js")

@@ -1,0 +1,268 @@
+include components/_mixins.pug
+doctype html
+html(lang="en")
+  head
+    +headMeta()
+
+    script var activeDomain = 0;
+  body
+
+    +nav
+
+    main.index
+
+      section.index-hero
+        .container 
+          .index-hero__wrapper.center
+            h1 DSpug T iHub - AWaDH
+            p Agriculture &amp; Water Technology Development Hub
+            p.u-support-text Indian Institute of Technology Ropar
+            button.link.button-unstyled(type="button", , onclick=`moreISClickHandler(event, 0);`) Learn more
+          
+        .index-hero__bg
+          img(src="assets/img/idea-to-solution.jpg", alt="DST iHub image")
+
+      +stats('')
+
+      section.index-programs 
+        .container 
+          .d-flex 
+            .flex-1
+              img.index-programs-img(src="assets/img/startup-idea.png", alt="startup idea")
+              h3 Do you know?
+              p.subtext Your idea can be a startup! Convert your ideas into product with us!
+              button.link.button-unstyled(type="button", onclick="toggleApplyModal(event);") Apply now
+            .flex-1
+              img.index-programs-img(src="assets/img/incubation-program.png", alt="incubation program")
+              h3 AWaDH Incubator
+              p.subtext A "one-stop-shop" for entrepreneurial support.
+              a.link(href="awadh-incubator/") Know more
+            .flex-1
+              img.index-programs-img(src="assets/img/cps-reach.jpg", alt="CPS outreach")
+              h3 CPS Outreach
+              p.subtext We connect with the community with an array of activities.
+              a.link(href="outreach/") Know more
+
+      section.incubator-domains
+        .container
+          h2 R &amp; D Domains
+          p.subheadtext The R &amp; D focus of the hub consists:
+          +incubatorDomains()
+
+      section.index-verticals
+        .container
+          h2 Technology Verticals
+          p.subheadtext We develope technology for the following sectors.
+          +verticals('')
+
+      section.index-news
+        .container
+          .d-flex.justify-content-space-between.align-items-center
+            h2 News &amp; Updates
+            a.link(href="publications/") View all
+          p.index-news--desc.subheadtext We put immense emphasis on promoting cutting edge research and development of high quality.
+          .index-news__listing.d-flex
+            each publication in publications.slice(0, 4)
+              .flex-1
+                div
+                  img(src=publication.image, alt=publication.image.replace(/assets\/img\//, '').replace('.png', '').replace('-', ' '))
+                h3=publication.title
+                p=publication.excerpt
+                a.link(href=publication.link.href, target="_blank", rel="noopener noreferrer")=publication.link.label
+
+      -
+        var testimonials = [
+          {
+            quote: 'The #innovation hub approved by GOI at @iitrpr will help the #agriculture and water sector in the country by bringing solutions for stubble management, water quality improvement, mapping of hazardous substances in water, soil & their treatment. #NewIndia',
+            avatar: 'assets/img/impressions/ramesh-pokharial-nishank.png',
+            name: "Dr. Ramesh Pokharial 'Nishank'",
+            position: 'Education Minister, Government of India',
+          },
+          {
+            quote: ' For humankind, there is nothing more mattering than sustainable agriculture. The R & D efforts at AWaDH underline the emphasis on technology innovation in the agriculture & water domain. I am confident, AWaDH of IIT Ropar will redefine agriculture practices towards an evergreen revolution.',
+            avatar: 'assets/img/team/rajeev_ahuja.png',
+            name: 'Prof. Rajeev Ahuja',
+            position: 'Director - IIT Ropar',
+          },
+          {
+            quote: ' The establishment of AWaDH at IIT Ropar is the most incredible opportunity for technology innovations in region. I trust, AWaDH will promote academic cooperation among the institutions and set an example for other Hubs in the country to emulate.',
+            avatar: 'assets/img/impressions/arun-grover.jpg',
+            name: 'Prof. Arun Grover',
+            position: 'President - CRIKC (2012-18); former Vice-Chancellor, Punjab University',
+          },
+          {
+            quote: 'The iHub - AWaDH, through its pioneering and collaborative R & D initiatives, can transform the commercial use of Technology and Innovations in the domain of Agriculture & Water and greatly benefit the farmers of this region and the country as a whole.',
+            avatar: 'assets/img/impressions/j-m-balamurugan.png',
+            name: 'J.M. Balamurugan',
+            position: 'IAS, Principal Secretary to Governor of Punjab',
+          },
+        ];
+
+      section.index-impressions
+        .container
+          .d-flex.justify-content-space-between.align-items-center
+            h2 Impressions
+            .index-impressions__controls
+              button.button-unstyled.index-impressions__controls-arrow-active(type="button", onclick="toggleIndexImpressions(event, 'left');")
+                img(src="assets/img/left-arrow.svg", alt="left arrow")
+              each testimonialID in Array.from(new Array(Math.ceil(testimonials.length / 2)).keys())
+                button.button-unstyled(type="button", onclick=`toggleIndexImpressions(event, 'dot-${testimonialID}');`)
+                  span.index-impressions__controls-dot(class=testimonialID === 0 ? 'index-impressions__controls-dot-active' : '')
+              button.button-unstyled.index-impressions__controls-arrow-active(type="button", onclick="toggleIndexImpressions(event, 'right');")
+                img(src="assets/img/right-arrow.svg", alt="right arrow")
+          .index-impressions__items.d-flex.align-items-center
+            each testimonial in testimonials
+              div
+                img(src="assets/img/quote.svg", alt="quote", width="33px")
+                p.subheadtext=testimonial.quote
+                .d-flex.align-items-center
+                  img.index-impressions__items--img(src=testimonial.avatar, alt=testimonial.name)
+                  div
+                    span=testimonial.name
+                    span=testimonial.position
+
+      .container
+        .separator
+
+      section.index-partners
+        .container
+          .d-flex.justify-content-space-between.align-items-center
+            h2 Mission partners
+            a.link(href="#!") See more
+          p.index-partners--desc.subheadtext We partner with leading academic organizations, FPOs, startups, businesses, and philanthropists. Our partners include more than 200 FPOs, several research & academic institutions, and growing.
+          .d-flex.index-partners__logos
+            -
+              var partners = [
+                {
+                  image: 'assets/img/partners/pau.png',
+                  width: '107px',
+                },
+                {
+                  image: 'assets/img/partners/csir-csio.png',
+                  width: '106px',
+                },
+                {
+                  image: 'assets/img/partners/pec-chandigarh.png',
+                  width: '107px',
+                },
+                {
+                  image: 'assets/img/partners/cdac-mohali.png',
+                  width: '104px',
+                },
+                {
+                  image: 'assets/img/partners/gadvsau.png',
+                  width: '137px',
+                },
+                {
+                  image: 'assets/img/partners/scratch-nest.png',
+                  width: '108px',
+                },
+                {
+                  image: 'assets/img/partners/tbi-iit-ropar.png',
+                  width: '109px',
+                },
+                {
+                  image: 'assets/img/partners/yoboshu.png',
+                  width: '89px',
+                },
+                {
+                  image: 'assets/img/partners/segger.png',
+                  width: '111px',
+                },
+                {
+                  image: 'assets/img/partners/yes-bank.png',
+                  width: '128px',
+                },
+                {
+                  image: 'assets/img/partners/pwrda.jpeg',
+                  width: '107px',
+                },
+              ];
+            each partner in partners
+              .d-flex.align-items-center.justify-content-center
+                img(src=partner.image, alt=partner.image.replace(/assets\/img\//, '').replace('.png', '').replace('-', ' '), width=partner.width)
+
+    +footer
+
+    .modal-learn-more.page-modal#modal-learn-more(style="display: none;")
+      button.button-unstyled.modal-learn-more--close(type="button")
+        img(src="assets/img/cross-outlined.svg", alt="close", onclick="closeMoreIS(event);")
+      .modal-learn-more__content(class=domains[0].id === 0 ? 'is-active' : '')
+        img(src=domains[0].imageFull, alt=domains[0].title)
+        .container
+          h2 iHub – AWaDH (Agriculture and Water Technology Development Hub)
+          p.modal-learn-more--subhead iHub – AWaDH (Agriculture and Water Technology Development Hub) is established by the Department of Science & Technology (DST), Government of India, at the Indian Institute of Technology Ropar in the framework of National Mission on Interdisciplinary Cyber Physical Systems (NM – ICPS) with time-bound predefined deliverables. The hub supports R&D in the domain of Agriculture & Water, and provides incubation resources and support to technology-based start-ups towards sustainable agriculture.
+          .d-flex
+            .flex-1
+              h3 The R & D focus of the hub consists
+            .flex-2
+              ul
+                li Water/industry discharge assessment, treatment, and management
+                li Advancement of land resources and farm preparation
+                li CPS in Agriculture automation
+                li Application of AI/ML in precision farming
+                li CPS in harvesting and post-harvesting
+                li The deployment of IoT systems in the domain of Agriculture & Water
+
+          .d-flex
+            .flex-1
+              h3 The technology advancements achieved at iHub - AWaDH will be deployed in the following technology domains
+            .flex-2
+              ul
+                li Food Processing Industry
+                li Rural Development
+                li Fisheries
+                li Skill Development and Entrepreneurship
+                li Textiles industry for discharge management
+                li Electronics and IT Industry for the development of IoT devices
+                li Fertilizer industry for the optimized combinations of nutrients
+                li Food and Public Distribution
+                li Atomic Energy
+                li NITI Aayog
+                li Implementation of right farming practices in terms of preparation of farmland, pre/post-harvesting, delivery of the agricultural commodities to the consumers, preservation, and storage without affecting the environment
+
+          .d-flex
+            .flex-1
+              h3 Some of the technologies that are being developed at iHub - AWaDH
+            .flex-2
+              ul
+                li Design and development of IoT enabled nano-bubble /oxygen generators for water treatment and remediation of rural domestic and industrial wastewater
+                li IoT based CPS for the water quality assessment and management
+                li Technology for the generation and application of crop-residue derived Biochar
+                li CPS for mapping the naturally occurring and artificially infused radioisotopes in soil and water
+                li AI-based CPS for optimized fertilizer / pesticide application
+                li Design and development of IoT enabled Harvester-cum-Bailer machine for Stubble Management
+                li Extra-ordinary and diversified applications of stubble for better environment and new livelihoods opportunities
+                li Urban farming
+                li Automation in agriculture towards precision farming in Rural and Urban settings
+                li IoT in the Domain of AgriTech 
+
+    .apply-modal.awadh-learn-modal
+      div
+        .apply-modal__head
+          h3.center Apply Here...
+          button.button-unstyled(type="button", onclick="toggleAwadhLearnModal(event);")
+            img(src=`assets/img/cross-outlined.svg`, alt="cross", width="32px")
+        .apply-modal__body
+          form
+            input#apply-name(type="text", name="fullname", placeholder="Name*", required)
+            input#apply-email(type="email", name="email", placeholder="Email address*", required)
+            input#apply-phone(type="text", name="phone", placeholder="Phone number*", required)
+            select#apply-for(name="applyingfor", required)
+              option(value="default", selected, disabled) Applying for*
+            select#apply-domains(name="domains", required)
+              option(value="default", selected, disabled) Domains*
+            input#apply-cv(type="file", name="cv", placeholder="Upload CV*", required)
+            textarea#apply-proposal(name="proposal", placeholder="Research Proposal (if any)")
+            p * Only shortlisted candidates will be informed through email.
+            .center
+              button.button(type="submit") Submit
+
+    script.
+      var domainsMenu = document.getElementsByClassName('index-domains__menu');
+      var domainsContent = document.getElementsByClassName('index-domains__content');
+      var modalLearnMoreContent = document.getElementsByClassName('modal-learn-more__content');
+      var indexImpressions = document.getElementsByClassName('index-impressions__items')[0];
+      var indexImpressionsControls = document.getElementsByClassName('index-impressions__controls')[0];
+      var indexImpressionsState = 0;
+    script(src="assets/js/main.js")

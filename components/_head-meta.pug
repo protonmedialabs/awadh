@@ -1,0 +1,20 @@
+mixin headMeta(pathPrefix = '', title = 'AWaDH - Indian Institute of Technology Ropar', description = 'AWaDH is a research center at IIT Ropar established with support from the Department of Science and Technology (DST) and Science and Engineering Research Board (SERB) to carry out extensive research in the field of agriculture and water.')
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  title=title
+  meta(name='description', content=`${description}`)
+
+  link(rel="apple-touch-icon" sizes="72x72" href=`${pathPrefix}assets/img/icons/72x72.png`)
+  link(rel="apple-touch-icon" sizes="128x128" href=`${pathPrefix}assets/img/icons/128x128.png`)
+  link(rel="apple-touch-icon" sizes="144x144" href=`${pathPrefix}assets/img/icons/144x144.png`)
+  link(rel="apple-touch-icon" sizes="152x152" href=`${pathPrefix}assets/img/icons/152x152.png`)
+
+  link(rel="icon" type="image/png" sizes="96x96" href=`${pathPrefix}assets/img/icons/96x96.png`)
+  link(rel="icon" type="image/png" sizes="192x192" href=`${pathPrefix}assets/img/icons/192x192.png`)
+  link(rel="icon" type="image/png" sizes="384x384" href=`${pathPrefix}assets/img/icons/384x384.png`)
+  link(rel="icon" type="image/png" sizes="512x512" href=`${pathPrefix}assets/img/icons/512x512.png`)
+
+  link(rel="preconnect", href="https://fonts.gstatic.com")
+  link(href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,700;1,700&family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap", rel="stylesheet")
+  link(rel="stylesheet", href=`${pathPrefix}assets/css/style.css`)

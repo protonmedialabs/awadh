@@ -1,0 +1,31 @@
+include ../components/_mixins.pug
+doctype html
+html(lang="en")
+  head
+    +headMeta('../', 'News & Updates | AWaDH - Indian Institute of Technology Ropar')
+  body
+
+    +nav('../')
+
+    main.blog
+      section.blog-hero
+        .container
+          h1 News &amp; Updates
+          p.subheadtext We put immense emphasis on promoting cutting edge research and development.
+
+      section.blog-articles
+        .container
+          .d-flex
+            each publication in publications
+              div
+                div
+                  img(src=`../${publication.image}`, alt=alt=publication.image.replace(/assets\/img\//, '').replace('.png', '').replace('-', ' '))
+                h4=publication.title
+                p=publication.excerpt
+                a.link(href=publication.link.href, target="_blank", rel="noopener noreferrer")=publication.link.label 
+
+      +applyNow('../')
+
+    +footer('../')
+
+    script(src="../assets/js/main.js")

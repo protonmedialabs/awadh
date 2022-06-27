@@ -1,0 +1,14 @@
+include ../../components/_mixins.pug
+doctype html
+html(lang="en")
+  head
+    +headMeta('../../', `${domains[5].title} | AWaDH - Indian Institute of Technology Ropar`)
+  body
+
+    +nav('../../')
+
+    +domainDetail(5)
+
+    +footer('../../')
+
+    script(src="../../assets/js/main.js")

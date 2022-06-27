@@ -1,0 +1,296 @@
+include ../components/_mixins.pug
+doctype html
+html(lang="en")
+  head
+    +headMeta('../', 'About Us | AWaDH - Indian Institute of Technology Ropar')
+  body
+
+    +nav('../')
+
+    main.about
+      section.about-hero.center
+        .container
+          h1 Agriculture &amp; Water Technology Development Hub
+          p.subheadtext iHub - AWaDH is an initiative of the Department of Science & Technology, Government of India, in the framework of National Mission on Interdisciplinary Cyber - Physical Systems at the Indian Institute of Technology Ropar.
+        
+        .about-hero__bg
+          img(src="../assets/img/about/main-bg.jpg", style="opacity: 0.8", alt="about image")
+      .container(style="margin-bottom: 60px")
+        .separator
+
+      +stats('../')
+
+      section.about-mission
+        .container
+          h2 Our Mission
+          .d-flex
+            img(src="../assets/img/about/mission.jpg", alt="mission page")
+            p.subheadtext "Environmentally sustainable and profitable agriculture, quality food for all, and the preservation of biodiversity."
+
+      .container
+        .separator
+
+      section.about-vision
+        .container
+          h2 Intellectual focus
+          p.subheadtext Providing technological solutions to the agricultural & water related issues and deploy CPS in the following technology verticals.
+          +verticals('../')
+
+      .container
+        .separator
+
+      section.about-board
+        .container
+          h2 Hub Governing Board
+          p.subheadtext Our hub governing board consists of a perfect blend of industry and academia. From creating processes to decision-making, we build our core values into nearly every single things we do at AWaDH.
+          .d-flex
+            -
+              var members = [
+                {
+                  avatar: '../assets/img/team/rajeev_ahuja.png',
+                  name: 'Prof. Rajeev Ahuja',
+                  position: 'Chairperson - HGB, and Director - IIT Ropar',
+                  links: {
+                    linkedin: 'https://www.linkedin.com/in/rajeev-ahuja-5818b839/',
+                    website: 'https://www.physics.uu.se/research/materials-theory/ongoing-research/materials-for-sustainable-energy-solutions/condensed-matter-theory/prof.-rajeev-ahuja',
+                    email: 'mailto:director@iitrpr.ac.in',
+                  }
+                },
+              ];
+            each member in members
+              +member(member, '../')
+          .separator
+          h3 Industry Members
+          .d-flex
+            -
+              var members = [
+                {
+                  avatar: '../assets/img/team/umakishore.png',
+                  name: 'Mr. G. S. V. Umakishore',
+                  position: 'Director, Samsung 5G Technology Research Division, Bangalore',
+                  links: {
+                    linkedin: 'https://www.linkedin.com/in/g-s-v-umakishore-6999472/',
+                    //website: '#!',
+                    email: 'mailto:umakishore@gmail.com',
+                  }
+                },
+                {
+                  avatar: '../assets/img/team/jigar_halani.png',
+                  name: 'Mr. Jigar Halani',
+                  position: 'Director-Solution Architect & Engineering, Nvidia, South Asia',
+                  links: {
+                    linkedin: 'https://www.linkedin.com/in/jigarhalani/',
+                    //website: '#!',
+                    email: 'mailto:jhalani@nivida.com',
+                  }
+                },
+                {
+                  avatar: '../assets/img/team/jatin_talwar.png', 
+                  name: 'Mr. Jitin Talwar',
+                  position: 'Founder and Member of the Talwar Advocates – Chandigarh',
+                  links: {
+                    linkedin: 'https://www.linkedin.com/in/jitintalwar/',
+                    website: 'https://talwaradvocates.com/our-firm/team/jitin-talwar/',
+                    email: 'mailto:prosecution@talwaradvocates.com',
+                  }
+                },
+              ];
+            each member in members
+              +member(member, '../')
+          .separator
+          h3 Academic Members
+          .d-flex
+            -
+              var members = [
+                {
+                  avatar: '../assets/img/team/dheeraj_sanghi.png',
+                  name: 'Prof. Dheeraj Sanghi',
+                  position: 'Director - PEC University, Chandigarh',
+                  links: {
+                    linkedin: 'https://www.linkedin.com/in/dheerajsanghi/',
+                    website: 'https://dsanghi.blogspot.com',
+                    email: 'mailto:sanghi@gmail.com',
+                  }
+                },
+                {
+                  avatar: '../assets/img/team/deepak_kashyap.png',
+                  name: 'Prof. Deepak Kashyap',
+                  position: 'Department of Civil Engineering, IIT Ropar',
+                  links: {
+                    linkedin: 'https://www.linkedin.com/in/deepak-kashyap-iitr-7277a44b/',
+                    website: 'https://www.iitrpr.ac.in/node/2055',
+                    email: 'mailto:deepakkashyap@iitrpr.ac.in',
+                  }
+                },
+                {
+                  avatar: '../assets/img/team/dr_naveen.jpg',
+                  name: 'Dr. Navin Kumar',
+                  position: 'Dean - R&D, ex-officio Member, IIT Ropar',
+                  links: {
+                    linkedin: 'https://www.linkedin.com/in/navin-kumar-a4a4a45/?originalSubdomain=in',
+                    website: 'https://sites.google.com/iitrpr.ac.in/mechanical/faculty-profiles-detailed/navin-kumar',
+                    email: 'mailto:nkumar@iitrpr.ac.in',
+                  }
+                },
+                {
+                  avatar: '../assets/img/team/ccreddy.jpg',
+                  name: 'Dr. C. C. Reddy',
+                  position: 'Dean - IR, ex-officio Member, IIT Ropar',
+                  links: {
+                    linkedin: 'https://www.linkedin.com/in/reddy-c-c-55581052/',
+                    website: 'https://www.iitrpr.ac.in/electrical/reddy',
+                    email: 'mailto:reddy@iitrpr.ac.in',
+                  }
+                },
+                {
+                  avatar: '../assets/img/team/pps.png',
+                  name: 'Dr. Pushpendra P. Singh',
+                  position: 'Project Director / Principal Investigator',
+                  links: {
+                    linkedin: 'https://www.linkedin.com/in/pushpendra-p-singh-173a1615/',
+                    website: 'https://www.iitrpr.ac.in/physics/p/research.html?cat=0&id=70',
+                    email: 'mailto:pps@iitrpr.ac.in',
+                  }
+                },
+              ];
+            each member in members
+              +member(member, '../')
+          .separator
+          h3 ICPS Mission Director - DST
+          .d-flex
+            -
+              var members = [
+                {
+                  avatar: '../assets/img/team/murali_mohan.png',
+                  name: 'Dr. K R Murali Mohan',
+                  position: 'ICPS Mission Director, Department of Science & Technology, New Delhi',
+                  links: {
+                    //- linkedin: '#!',
+                    website: 'https://dst.gov.in/whoswho/dr-k-r-murali-mohan',
+                    email: 'mailto:krmm@nic.in',
+                  }
+                },
+              ];
+            each member in members
+              +member(member, '../')
+          
+          //- .separator
+          //- h3 Board of Directors
+          //- .d-flex
+          //-   -
+          //-     var members = [
+          //-       {
+          //-         avatar: '../assets/img/team/rajeev_ahuja.png',
+          //-         name: 'Prof. Rajeev Ahuja',
+          //-         position: 'Chairperson - HGB Director - IIT Ropar',
+          //-         links: {
+          //-           linkedin: 'https://www.linkedin.com/in/rajeev-ahuja-5818b839/',
+          //-           website: 'https://www.physics.uu.se/research/materials-theory/ongoing-research/materials-for-sustainable-energy-solutions/condensed-matter-theory/prof.-rajeev-ahuja',
+          //-           email: 'mailto:director@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-       {
+          //-         avatar: '../assets/img/team/pps.png',
+          //-         name: 'Dr. Pushpendra P. Singh',
+          //-         position: 'Project Director',
+          //-         links: {
+          //-           linkedin: 'https://www.linkedin.com/in/pushpendra-p-singh-173a1615/',
+          //-           website: 'https://www.iitrpr.ac.in/physics/p/research.html?cat=0&id=70',
+          //-           email: 'mailto:pps@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-       {
+          //-         avatar: '../assets/img/team/harpreet_singh.png',
+          //-         name: 'Prof. Harpreet Singh',
+          //-         position: 'Dean - ICSR & II, ex-officio Member, IIT Ropar',
+          //-         links: {
+          //-           linkedin: 'https://www.linkedin.com/in/prof-harpreet-singh-9786a289/',
+          //-           website: 'https://sites.google.com/iitrpr.ac.in/mechanical/faculty-profiles-detailed/harpreet-singh?authuser=0',
+          //-           email: 'mailto:harpreetsingh@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-     ];
+          //-   each member in members
+          //-     +member(member, '../')
+          //- .separator
+          //- h3 Domain Coordinators
+          //- .d-flex
+          //-   -
+          //-     var members = [
+          //-       {
+          //-         avatar: '../assets/img/team/mukesh.png',
+          //-         name: 'Dr. Mukesh K. Saini',
+          //-         position: '<a href="/r&d-domains/agriculture-automation-and-information-systems/">Agriculture Automation & Information systems</a>',
+          //-         links: {
+          //-           linkedin: 'https://www.linkedin.com/in/mukesh-saini-052a1644/',
+          //-           website: 'https://cse.iitrpr.ac.in/mukesh/',
+          //-           email: 'mailto:mukesh@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-       {
+          //-         avatar: '../assets/img/team/neeraj.png',
+          //-         name: 'Dr. Neeraj Goel',
+          //-         position: '<a href="/r&d-domains/agriculture-automation-and-information-systems/">Agriculture Automation & Information systems</a>',
+          //-         links: {
+          //-           linkedin: 'https://www.linkedin.com/in/neerajgoel/',
+          //-           website: 'https://sites.google.com/view/neerajgoel',
+          //-           email: 'mailto:neeraj@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-       {
+          //-         avatar: '../assets/img/team/suman.png',
+          //-         name: 'Dr. Suman Kumar',
+          //-         position: '<a href="/r&d-domains/iot-systems/">IoT Systems</a>',
+          //-         links: {
+          //-           linkedin: 'https://www.linkedin.com/in/suman-kumar-701646166/',
+          //-           website: 'https://www.iitrpr.ac.in/Dr.suman/',
+          //-           email: 'mailto:suman@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-       {
+          //-         avatar: '../assets/img/team/neelkanth_nirmalkar.png',
+          //-         name: 'Dr. Neelkanth Nirmalkar',
+          //-         position: '<a href="/r&d-domains/water-treatment-and-management/">Water Treatment & Management</a>',
+          //-         links: {
+          //-           linkedin: 'https://www.linkedin.com/in/neelkanth-nirmalkar-793800171/',
+          //-           //- website: '#!',
+          //-           email: 'mailto:n.nirmalkar@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-       {
+          //-         avatar: '../assets/img/team/vijay.png',
+          //-         name: 'Dr. L. Vijay Anand',
+          //-         position: '<a href="/r&d-domains/water-and-soil-assessment-processes/">Water & Soil Assessment Processes</a>',
+          //-         links: {
+          //-           //- linkedin: '#!',
+          //-           website: 'https://www.iitrpr.ac.in/vijayanand',
+          //-           email: 'mailto:vijayanand@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-       {
+          //-         avatar: '../assets/img/team/prabir.png',
+          //-         name: 'Dr. L. Prabir Sarkar',
+          //-         position: '<a href="/r&d-domains/stubble-management-systems-and-urban-farming/">Stubble Management Systems & Urban Farming</a>',
+          //-         links: {
+          //-           linkedin: 'https://www.linkedin.com/in/prabir-sarkar-73984618/',
+          //-           website: 'https://sites.google.com/iitrpr.ac.in/mechanical/faculty-profiles-detailed/prabir-sarkar?authuser=0',
+          //-           email: 'mailto:prabir@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-       {
+          //-         avatar: '../assets/img/team/pps.png',
+          //-         name: 'Dr. Pushpendra Singh',
+          //-         position: 'Instrumentation, <a href="/r&d-domains/nuclear-applications-in-agriculture-and-water/">Nuclear Applications in Agriculture & Water</a>',
+          //-         links: {
+          //-           linkedin: 'https://www.linkedin.com/in/pushpendra-p-singh-173a1615/',
+          //-           website: 'https://www.iitrpr.ac.in/physics/p/research.html?cat=0&id=70',
+          //-           email: 'mailto:pps@iitrpr.ac.in',
+          //-         }
+          //-       },
+          //-     ];
+          //-   each member in members
+          //-     +member(member, '../')
+
+    +footer('../')
+
+    script(src="../assets/js/main.js")

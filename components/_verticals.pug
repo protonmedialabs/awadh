@@ -1,0 +1,60 @@
+mixin verticals(pathPrefix = '')
+  .index-verticals__items.d-flex
+    -
+      var verticals = [
+        {
+          image: `${pathPrefix}assets/img/food-processing-industry.png`,
+          title: 'Food Processing Industry',
+          width: '48px',
+        },
+        {
+          image: `${pathPrefix}assets/img/rural-development.png`,
+          title: 'Rural Development',
+          width: '48px',
+        },
+        {
+          image: `${pathPrefix}assets/img/fisheries.png`,
+          title: 'Fisheries',
+          width: '59px',
+        },
+        {
+          image: `${pathPrefix}assets/img/skill-development.png`,
+          title: 'Skill Development & Entrepreneurship',
+          width: '50px',
+        },
+        {
+          image: `${pathPrefix}assets/img/textiles-industry.png`,
+          title: 'Textiles industry',
+          width: '54px',
+        },
+        {
+          image: `${pathPrefix}assets/img/electronic.png`,
+          title: 'Electronic and IT',
+          width: '46px',
+        },
+        {
+          image: `${pathPrefix}assets/img/fertilizer-industry.png`,
+          title: 'Fertilizer industry',
+          width: '46px',
+        },
+        {
+          image: `${pathPrefix}assets/img/food-public-distribution.png`,
+          title: 'Food and Public Distribution',
+          width: '53px',
+        },
+        {
+          image: `${pathPrefix}assets/img/atomic-energy.png`,
+          title: 'Atomic Energy',
+          width: '45px',
+        },
+        {
+          image: `${pathPrefix}assets/img/niti-ayog.png`,
+          title: 'NITI Aayog',
+          width: '41px',
+        },
+      ];
+    each vertical in verticals
+      .d-flex
+        img(src=vertical.image, alt=vertical.title, width=vertical.width)
+        span
+        span=vertical.title

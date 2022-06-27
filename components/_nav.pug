@@ -1,0 +1,63 @@
+mixin nav(pathPrefix = '')
+  nav.nav#nav
+    .container
+      .d-flex.nav-menu.align-items-center
+        .flex-1
+          button.button-unstyled(type="button" onclick="toggleMenu(event);")
+            img(src=`${pathPrefix}assets/img/icon-filled-menu.svg`, alt="menu", width="26px", height="26px")
+            img(src=`${pathPrefix}assets/img/close-button.svg`, alt="close", width="26px", height="26px")
+        .flex-1.center
+          a(href=pathPrefix)
+            img(src=`${pathPrefix}assets/img/logo-wheat-nobg.png`, alt="", width="74px")
+            img(src=`${pathPrefix}assets/img/iit-ropar.png`, alt="", width="48px")
+            img(src=`${pathPrefix}assets/img/department-science-technology-white.png`, alt="department science technology", width="150px")
+        .flex-1.right
+          a.button.button-outline(href=`${pathPrefix}awadh-incubator/`) AWaDH Incubator
+          a.button(href=`${pathPrefix}join-us/`) Join Us
+    .nav-menu__mega
+      .container
+        .d-flex.justify-content-space-between.nav-menu__mega--row
+          ul.nav-menu__mega--list
+            li
+              a(href=pathPrefix) Home
+            li
+              a(href=`${pathPrefix}about-us/`) About us
+            li
+              a(href=`${pathPrefix}outreach/`) CPS Outreach
+            li
+              a.nav-menu__mega--list-rd(href="#!", onfocus="navDomainFocusHandler(event);", onblur="navDomainBlurHandler(event);") R&amp;D Domains
+                img(src=`${pathPrefix}assets/img/chevron-right-white.svg`, alt="chevron", width="12px")
+            li
+              a(href=`${pathPrefix}publications/`) News &amp; Updates
+            li
+              a(href=`${pathPrefix}contact-us/`) Contact us
+          .nav-menu__mega--separator
+          ul.nav-menu__mega--list.nav-menu__mega--list-rdul
+            li
+              a(href=`${pathPrefix}r&d-domains/agriculture-automation-and-information-systems/`) Information Systems
+            li
+              a(href=`${pathPrefix}r&d-domains/iot-systems/`) IoT Systems
+            li
+              a(href=`${pathPrefix}r&d-domains/water-treatment-and-management/`) Water Treatment and Management
+            li
+              a(href=`${pathPrefix}r&d-domains/water-and-soil-assessment-processes/`) Water and Soil Quality Assessment Processes
+            li
+              a(href=`${pathPrefix}r&d-domains/stubble-management-systems-and-urban-farming/`) Stubble Management Systems and Urban Farming
+            li
+              a(href=`${pathPrefix}r&d-domains/nuclear-applications-in-agriculture-and-water/`) Nuclear Applications in Agriculture &amp; Water
+          .nav-menu__mega--separator
+          .nav-menu__mega--contact
+            h4.hidden-xs Contact us
+            .d-flex.align-items-center
+              img(src=`${pathPrefix}assets/img/email-footer.svg`, alt="email", width="24px")
+              a(href="mailto:contact.awadh@iitrpr.ac.in") contact.awadh@iitrpr.ac.in
+            .d-flex.align-items-center
+              img(src=`${pathPrefix}assets/img/phone.svg`, alt="phone", width="24px")
+              a(href="tel:01881232601") 01881 - 232601
+            .separator
+            h4 Social media
+            +socialLinks(pathPrefix)
+            .separator
+            h4 Useful link
+            a(href="#!") Visit IIT Ropar official website
+              img(src=`${pathPrefix}assets/img/foreign.svg`, alt="foreign", width="16px", style="margin-left: 10px; vertical-align: middle")

@@ -1,0 +1,83 @@
+include ../components/_mixins.pug
+doctype html
+html(lang="en")
+  head
+    +headMeta('../', 'AWaDH Outreach Programme | Indian Institute of Technology Ropar')
+  body
+
+    +nav('../')
+
+    main.incubator
+      section.incubator-hero
+        .container
+          .d-flex.align-items-center.justify-content-space-between
+            div
+              h1 AWaDH Outreach
+              p.subheadtext We reachout the academic &amp; industry through our CPS courses, internships, conferences, workshops, competitions, and through many other ways.
+               h4 Checkout our Internship Carnival
+              a.link(href="https://internship-carnival.in") Learn More
+            div
+              img(src="../assets/img/cps-reach.jpg", alt="hand tools", width="481px")
+              section.join-convert
+        
+             
+
+      section.incubator-domains
+        .container.join-openings
+          h2 CPS Outreach Activities
+          p.subheadtext We connect with the community with an array of initiatives.
+          .d-flex
+            -
+              var openings = [
+                {
+                  title: 'CPS Courses',
+                  description: 'This 8 week course on CPS for agriculture automation for students, recent graduates, and industry professionals is facilitated by faculty and industry professionals. The course includes 100 contact hours for lectures and labs, and 60 hours of a capstone project.',
+                },
+                {
+                  title: 'UG & PG internships',
+                  description: 'Through this fellowship, we provide a platform for UG & PG students to work on a socially relevant problem and solve it using CPS. This is an opportunity to take part in the global ecosystem. This will create a pool of trained professionals in CPS domain to be problem-solvers or turn entrepreneurs.',
+                },
+                {
+                  title: 'Internship carnivals',
+                  description: 'We offer every year 100 internships to strengthen the entrepreneurial ecosystem as well as deliver immense value to other TBIs. AWaDH - Internship Carnival is a pre-incubation activity targeted mainly at scouting of innovations in the domain of AgriTech.',
+                },
+                {
+                  title: 'Conferences',
+                  description: 'Every conference organized at AWaDH will focus on topics connected to a technology innovation domain in AgriTech and the related concerns. Out of two conferences planned every year, one conference will be of internal nature to Gain global competitiveness and international visibility.',
+                },
+                {
+                  title: 'Workshops',
+                  description: 'Our workshops mainly focus to provide hands-on-training to the UG & PG students by the eminent faculty members and industry professionals to enable individual excellence through the training and to promote eco-system of innovation and techno-entrepreneurship.',
+                },
+                {
+                  title: 'Competitions',
+                  description: 'The Grand Challenges organized at AWaDH will nurture new and innovative solutions for major challenges being faced by the society that are viable and sustainable. We will provide structured mentoring, guidance, prototyping grants, and seed-funding for ideas applying for such programmes.',
+                },
+              ];
+            each opening in openings
+              div
+                h3=opening.title
+                p.subtext=opening.description
+
+      
+
+      section.join-convert
+        .container
+          .d-flex.align-items-center
+            div
+              h3 Got an idea? Join our startup eco-system
+              //p.subtext Convert research solutions to scalable, affordable, and sustainable technology
+              a.link(href="../awadh-incubator/") Visit AWaDH incubator
+            img(src=`../assets/img/domains/join-us.jpg`, alt="study work table", width="401px")
+
+
+    +footer('../')
+
+    script.
+      var incubatorItems = document.getElementsByClassName('incubator-helps__items');
+      var incubatorItemsDots = document.getElementsByClassName('incubator-helps__dots')[0];
+      if (window.innerWidth > 979)
+        var incubatorCarouselLength = Math.ceil(incubatorItems[0].children.length / 4);
+      else
+        var incubatorCarouselLength = Math.ceil(incubatorItems[0].children.length / 2);
+    script(src="../assets/js/main.js")

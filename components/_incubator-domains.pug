@@ -1,0 +1,9 @@
+mixin incubatorDomains(pathPrefix = '')
+  .d-flex
+    each domain in domains
+      div
+        img(src=`${pathPrefix}${domain.image}`, alt=domain.title)
+        div.incubate-domain-detail
+          h3=domain.title
+          p=domain.description
+          a.link(href=`${pathPrefix}${domain.href}`) Know more
