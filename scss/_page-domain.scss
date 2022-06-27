@@ -1,0 +1,152 @@
+.domain {
+
+  &-main-img{
+    max-width: 85%;
+    max-width: 85vw;
+    max-height: 550px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width:767px){
+      max-width: 100vw;
+      max-width: 100%;
+    }
+  } // main-img
+
+  &-hero {
+    padding: 48px 0 80px;
+    
+    .subheadtext{
+      font-size: 20px;
+      color: $grey2;
+
+      @media (max-width: 767px){
+        font-size: 18px;
+      }
+    }
+
+    p {
+      max-width: 847px;
+      margin: 8px auto 40px;
+    }
+  }
+
+  &-research {
+    background-color: $lighterGrey;
+    padding: 80px 0;
+
+    @media (max-width: 767px) {
+      padding: 50px 0;
+    }
+
+    h2 {
+      margin-bottom: 60px;
+      
+      @media (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .d-flex {
+      flex-wrap: wrap;
+      margin: -16px;
+
+      & > div {
+        padding: 40px;
+        border-radius: 10px;
+        border: 1px solid $grey3;
+        margin: 16px;
+        max-width: calc(50% - 32px);
+
+        @media (max-width: 767px) {
+          max-width: max-content;
+          padding: 30px 25px;
+        }
+
+        p {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
+  &-join {
+    padding: 80px 0;
+
+    @media (max-width: 767px) {
+      padding: 50px 0;
+    }
+
+    &__wrapper {
+      // background-image: linear-gradient(97deg, #51c1bc 2%, #43b5af 45%, #33a7a0 97%);
+      color: $black;
+      padding: 44px 60px;
+      border-radius: 8px;
+      
+      @media (max-width: 767px) {
+        padding: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      & > div {
+        max-width: 922px;
+
+        p {
+          font-size: 18px;
+          margin-top: 10px;
+          line-height: 1.5;
+          
+          @media (max-width: 560px) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      button {
+        white-space: nowrap;
+
+        @media (max-width: 767px) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  &-members {
+    padding: 80px 0;
+
+    .d-flex {
+      margin: 60px -48px 0;
+
+      & > div {
+        margin: 0 48px;
+      }
+
+      @media (max-width: 767px) {
+        margin-left: -20px;
+        margin-right: -20px;
+
+        & > div {
+          margin: 0 20px;
+
+          img {
+            max-width: 100px;
+          }
+        }
+      }
+    }
+  }
+
+  &-apply_img{
+    max-height: 150px;
+    float: left;
+    margin-right: ($space * 2);
+
+    @media (max-width: 767px){
+      max-height: 120px;
+      float: none;
+    } // mobile only
+  }
+} // domain

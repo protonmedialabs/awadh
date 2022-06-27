@@ -1,0 +1,347 @@
+.nav {
+  position: fixed;
+  background-color: $white;
+  width: 100%;
+  padding: 25px 0;
+  z-index: 9;
+  transition: all 0.2s;
+  -webkit-animation: fadeInDown 0.5s ease-in-out;
+  animation: fadeInDown 0.5s ease-in-out;
+
+  &-menu {
+    & > div {
+      @media (max-width: 979px) {
+        flex: auto;        
+      }
+
+      &:nth-child(1) {
+        button {
+          position: relative;
+
+          &::after {
+            content: 'Menu';
+            display: inline-block;
+            vertical-align: text-top;
+            margin-left: 12px;
+            font-size: 21px;
+            color: $cyan;
+          }
+
+          img {
+            &:first-of-type {
+              display: inline-block;
+            }
+
+            &:last-of-type {
+              display: none;
+            }
+          }
+
+          @media (max-width: 767px) {
+            &::after {
+              font-size: 16px;
+              padding-top: 3px;
+            }
+
+            img {
+              width: 20px
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        white-space: nowrap;
+
+        @media (max-width: 979px) {
+          text-align: right !important;        
+        }
+
+        img {
+            margin-right: 15px;
+            padding-right: 15px;
+            border-right: 1px solid rgba($grey, 0.1);
+
+          &:last-child {
+            filter: invert(1);
+            margin-right: 0;
+            border-right: none;
+            padding-right: 0;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        @media (max-width: 767px) {
+          display: none;
+        }
+        a:last-child {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    &__mega {
+      position: absolute;
+      top: 96px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: calc(100vh - 96px);
+      background-color: #090b0a;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      display: none;
+
+      @media (max-width: 979px) {
+        overflow: auto;
+      }
+
+      @media (max-width: 767px) {
+        top: 89px;
+      }
+
+      &,
+      a,
+      p {
+        color: $grey;   
+      }
+
+      a {
+        &:hover {
+          color: $f;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        margin: 12px 0 60px;
+      }
+
+      &--separator {
+        height: 412px;
+        width: 1px;
+        background-color: rgba($grey3, 0.2);
+        transition: opacity 0.1s;
+
+        @media (max-width: 979px) {
+          display: none;
+        }
+      }
+
+      &--row {
+        margin-top: 50px;
+        
+        @media (max-width: 979px) {
+          margin-top: 0px;
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+      }
+
+      &--list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        transition: opacity 0.1s;
+
+        @media (max-width: 979px) {
+          min-width: 150px;
+          opacity: 1 !important;
+          pointer-events: all !important;
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+
+        &-rd {
+          @media (max-width: 979px) {
+            display: block;
+            margin-bottom: 310px;
+          }
+
+          @media (max-width: 380px) {
+            margin-bottom: 330px;
+          }
+
+          img {
+            opacity: 0.5;
+            margin-left: 15px;
+          }
+
+          &:hover {
+            img {
+              opacity: 1;
+            }
+          }
+        }
+
+        &:first-of-type {
+          min-width: 225px;
+          z-index: 1;
+
+          li {
+            margin-bottom: 40px;
+
+            &:last-child {
+              margin: 0;
+            }
+
+            a {
+              font-size: 32px;
+            }
+          }
+
+          @media (max-width: 979px) {
+            li {
+              margin-bottom: 20px;
+
+              a {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+
+        &-rdul {
+          @media (max-width: 979px) {
+            margin-top: -350px;
+            margin-left: 20px;
+            height: 280px;
+            z-index: 1;
+          }
+
+          @media (max-width: 380px) {
+            margin-top: -370px;
+          }
+
+          li {
+            margin-bottom: 28px;
+
+            @media (max-width: 979px) {
+              margin-bottom: 18px;
+            }
+
+            &:last-child {
+              margin: 0;
+            }
+
+            a {
+              font-size: 21px;
+
+              @media (max-width: 979px) {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+
+      &--contact {
+        @media (max-width: 979px) {
+          padding: 100px 0 50px;
+          width: 100%;
+        }
+
+        @media (max-width: 380px) {
+          padding: 100px 0 50px;
+        }
+
+        h4 {
+          margin-bottom: 20px;
+        }
+
+        a {
+          color: $grey3;
+
+          &:hover {
+            color: $f;
+          }
+        }
+
+        .d-flex {
+          margin-bottom: 33px;
+
+          @media (max-width: 767px){
+            margin-bottom: 18px;
+            margin-top: 6px;
+          }
+
+          img {
+            margin-right: 15px;
+          }
+        }
+
+        .separator {
+          margin-bottom: 28px;
+        }
+
+        .social-links {
+          margin-bottom: 28px;
+
+          img {
+            width: 28px;
+          }
+        }
+      }
+    }
+  }
+
+  &.is-active {
+    background-color: #090b0a;
+
+    .nav-menu {
+      & > div {
+        &:nth-child(1) {
+          button {
+            &::after {
+              content: 'Close';
+              color: $f;
+            }
+
+            img {
+              &:first-of-type {
+                display: none;
+              }
+  
+              &:last-of-type {
+                display: inline-block;
+              }
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          img {
+            &:last-child {
+              filter: invert(0);
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          a {
+            &:first-child {
+              border-color: $f;
+              color: $f;
+            }
+
+            &:last-child {
+              background-color: $f;
+              color: $cyan;
+            }
+          }
+        }
+      }
+
+      &__mega {
+        opacity: 1;
+        pointer-events: all;
+        display: block;
+      }
+    }
+  }
+}

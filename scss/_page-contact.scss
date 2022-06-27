@@ -1,0 +1,74 @@
+.contact {
+  &-hero {
+    padding: 50px 0;
+
+    p {
+      margin: 10px auto 48px;
+
+      @media (max-width: 767px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-options {
+    background-color: $lighterGrey;
+    padding: 120px 0;
+
+    @media (max-width: 767px) {
+      padding: 50px 0;
+
+      .d-flex {
+        flex-direction: column;
+        margin: -20px 0;
+
+        & > div {
+          margin: 20px 0;
+        }
+      }
+    }
+
+    p {
+      color: $grey2;
+    }
+
+    a {
+      color: $black;
+
+      &:hover {
+        color: $cyan;
+      }
+    }
+
+    .subhead {
+      margin: 40px 0 15px;
+      color: $black;
+    }
+
+    img {
+      max-width: 40px;
+      max-height: 40px;
+    }
+  }
+
+  &-form {
+    padding: 120px 0;
+
+    @media (max-width: 767px) {
+      padding: 50px 0;
+    }
+
+    p {
+      margin-top: 20px;
+    }
+
+    form {
+      max-width: 850px;
+      margin: 60px auto 0;
+
+      @media (max-width: 767px) {
+        margin-top: 25px;
+      }
+    }
+  }
+}
